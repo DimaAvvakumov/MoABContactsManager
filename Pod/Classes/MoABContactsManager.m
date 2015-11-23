@@ -504,11 +504,11 @@
 void addressBookExternalChange(ABAddressBookRef __unused addressBookRef, CFDictionaryRef __unused info, void *context)
 {
     MoABContactsManager *manager = (__bridge MoABContactsManager *)(context);
-    if (ABAddressBookHasUnsavedChanges(addressBookRef)) {
-        ABAddressBookSave(addressBookRef, NULL);
-    } else {
-        ABAddressBookRevert(addressBookRef);
-    }
+    // if (ABAddressBookHasUnsavedChanges(addressBookRef)) {
+    //     ABAddressBookSave(addressBookRef, NULL);
+    // } else {
+    //     ABAddressBookRevert(addressBookRef);
+    // }
     if([manager.delegate respondsToSelector:@selector(addressBookDidChange)])
     {
         [manager.delegate addressBookDidChange];
