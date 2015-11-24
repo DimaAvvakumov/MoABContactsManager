@@ -372,7 +372,7 @@
         
         NSString *value = (__bridge_transfer NSString *)(ABMultiValueCopyValueAtIndex(multiValueRef, i));
         CFStringRef locLabel = ABMultiValueCopyLabelAtIndex(multiValueRef, i);
-        NSString *label =(__bridge_transfer NSString*)locLabel;
+        NSString *label =(__bridge NSString*)locLabel;
         if (label == nil) {
             label = @"";
         }
