@@ -74,7 +74,10 @@
 
 - (NSString *)camelCaseStringToUnderscore:(NSString *)camelCaseString
 {
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(?<=[a-z])([A-Z])|([A-Z])(?=[a-z])" options:0 error:nil];
+    static NSRegularExpression *regex = nil;
+    if (regex == nil) {
+        regex = [NSRegularExpression regularExpressionWithPattern:@"(?<=[a-z])([A-Z])|([A-Z])(?=[a-z])" options:0 error:nil];
+    }
     NSString *underscoreString = [[regex stringByReplacingMatchesInString:camelCaseString options:0 range:NSMakeRange(0, camelCaseString.length) withTemplate:@"_$1$2"] lowercaseString];
     return underscoreString;
 }
