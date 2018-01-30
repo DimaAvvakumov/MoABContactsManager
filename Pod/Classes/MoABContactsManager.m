@@ -51,7 +51,7 @@
         
         _fieldsMask = MoContactFieldDefaults;
         _sortDescriptors = @[];
-        [self observeAddressBook];
+        // [self observeAddressBook];
     }
     
     return self;
