@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "MoABContactsManager"
-  s.version          = "1.0.12"
+  s.version          = "1.0.13"
   s.summary          = "Simple address book contacts manager."
   s.description      = <<-DESC
                       MoABContactsManager is a wrapper of AddressBook.framework which allows you to get, create, update or delete contacts in an easy way.
@@ -25,8 +25,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'MoABContactsManager' => ['Pod/Assets/*.png']
-  }
 
 end
